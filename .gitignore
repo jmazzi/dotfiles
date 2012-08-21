@@ -1,0 +1,5 @@
+.localrc
+
+.vim/.backup/
+.vim/doc/tags
+.vim/.netrwhist
