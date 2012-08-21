@@ -1,4 +1,5 @@
 .localrc
+.localgitconfig
 
 .vim/.backup/
 .vim/doc/tags
