@@ -1,0 +1,52 @@
+[user]
+  name = Justin Mazzi
+  email = jmazzi@gmail.com
+[alias]
+  co = checkout
+  stat = status
+  ci = commit
+  tree-diff = log --pretty=oneline --graph --all
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  browse  = !url=$( \
+    echo \"`git config remote.origin.url`\" | \
+    ruby -e \"url = ARGF.read.chomp\" \
+    -e \"url.sub! %r{^(git(://|@)|http(s?)://)}, ''\" \
+    -e \"url.sub! ':', '/'\" \
+    -e \"url.sub! %r{\\.git\\$}, ''\" \
+    -e \"print('http://' + url) if url != ''\" \
+    ) && [[ -n $url ]] && open $url || echo \"Can't find origin.\" && exit 1
+  wdiff = diff --color-words
+  sexytime = !git push -u && git pull-request
+  tree-graph = log --graph --simplify-by-decoration --pretty=format:'%d' --all
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+  wtf = auto
+  ui = 1
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[branch]
+  autosetupmerge = true
+[rerere]
+  enabled = 1
+[push]
+  default = tracking
+[core]
+  excludesfile = ~/.gitignore_global
+[difftool "sourcetree"]
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path =
+[include]
+  path = ~/.localgitconfig
