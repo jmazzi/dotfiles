@@ -1,4 +1,9 @@
-# Oh-My-Zsh
+# Install Oh-My-Zsh if it doesn't exist
+if [[ ! -d ~/.oh-my-zsh ]]; then
+  echo "Installing oh-my-zsh"
+  git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+fi
+
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME='miloshadzic'
 export DISABLE_AUTO_UPDATE=true
@@ -45,3 +50,37 @@ zstyle -e ':completion:*' command-path \
   '[[ -d $PWD/bin ]] && reply=($PWD/bin $path)'
 
 [[ -f ~/.localrc ]] && source ~/.localrc
+
+# Aliases
+alias diaf='git reset --hard'
+
+alias sg='ruby script/generate'
+alias sc='ruby script/console'
+alias rc='pry'
+alias b='bundle'
+
+# Wrap git in hub
+alias gc='git commit'
+alias gs='git status'
+alias gp='git push'
+
+alias p='nocorrect padrino'
+alias s='nocorrect s'
+
+alias knife='nocorrect knife'
+
+alias empty_dir_find="find . -type d -empty -not -regex '.*\.git.*'"
+alias empty_dir_find_keep="find . -type d -empty -not -regex '.*\.git.*' -exec touch {}/.gitignore \; -print"
+
+# Linux
+alias pacman='sudo pacman'
+alias crp='CrashPlanDesktop'
+alias apt-get='sudo apt-get'
+alias fork='setsid'
+alias open='xdg-open'
+
+if ! which ack > /dev/null; then
+  alias ack='ack-grep'
+fi
+
+alias screenfo='/usr/bin/site_perl/screenfo'
