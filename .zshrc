@@ -38,6 +38,11 @@ export TERM=xterm-256color
 set -o emacs
 bindkey -e
 
+# Auto cd
+setopt auto_cd
+cdpath=($HOME/work/Site5 $HOME/work)
+
+
 # rbenv
 eval "$(rbenv init -)"
 export PATH=./bin:$PATH
@@ -84,3 +89,51 @@ if ! which ack > /dev/null; then
 fi
 
 alias screenfo='/usr/bin/site_perl/screenfo'
+
+# Functions
+function core() {
+  cmd=$1
+  echo $cmd
+}
+
+# Crashplan
+function start_crashplan() {
+  sudo launchctl load /Library/LaunchDaemons/com.crashplan.engine.plist
+}
+
+function stop_crashplan() {
+  sudo launchctl unload /Library/LaunchDaemons/com.crashplan.engine.plist
+}
+
+
+function myip() {
+  curl ifconfig.me
+}
+
+
+function remove_ssh_key {
+  if [[ $1 != "" ]]; then
+    sed "$1 d" < ~/.ssh/known_hosts > /tmp/known_hosts && mv -f /tmp/known_hosts ~/.ssh/known_hosts
+  fi
+}
+
+function prestart () {
+  if [[ -d "tmp" ]]; then
+  touch tmp/restart.txt
+  else
+    echo "Please change to project root first"
+  fi
+}
+
+function kill_matching() {
+  if [[ $1 != "" ]]; then
+    ps auxww | grep "$@" | grep -v grep | awk '{print $2}' | xargs -P 10 kill -9
+  fi
+}
+
+function root_kill_matching() {
+  if [[ $1 != "" ]]; then
+    sudo echo -n
+    ps auxww | grep "$@" | grep -v grep | awk '{print $2}' | xargs -P 10 sudo kill -9
+  fi
+}
