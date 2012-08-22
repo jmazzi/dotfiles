@@ -5,7 +5,7 @@ if [[ ! -d ~/.oh-my-zsh ]]; then
 fi
 
 export ZSH=$HOME/.oh-my-zsh
-export ZSH_THEME='miloshadzic'
+export ZSH_THEME='arrow'
 export DISABLE_AUTO_UPDATE=true
 
 # COMPLETION_WAITING_DOTS="true"
