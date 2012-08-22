@@ -1,6 +1,6 @@
 desc "List untracked dot files"
 task :untracked do
-  sh "cd $HOME && find .* ! -type l -maxdepth 0"
+  sh "cd $HOME && git status --ignored"
 end
 
 desc "Download git submodules"
