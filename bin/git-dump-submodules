@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+file=ARGV[0] || exit
+gitmodules = IO.read(file).split(/\n\[/)
+
+gitmodules.each do |m|
+  lines = m.split "\n"
+  url  = lines[2].chomp.sub(/.*url = /, '')
+  path = lines[1].chomp.sub(/.*path = /, '')
+
+  puts "git submodule add #{url} #{path}"
+end
