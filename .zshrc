@@ -54,6 +54,7 @@ eval `dircolors ~/.dircolors 2>/dev/null`
 zstyle -e ':completion:*' command-path \
   '[[ -d $PWD/bin ]] && reply=($PWD/bin $path)'
 
+# Source my localrc if it exists
 [[ -f ~/.localrc ]] && source ~/.localrc
 
 # Aliases
