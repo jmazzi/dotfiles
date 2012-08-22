@@ -1,0 +1,4 @@
+#!/bin/bash
+if [[ $1 != "" ]]; then
+  sed "$1 d" < ~/.ssh/known_hosts > /tmp/known_hosts && mv -f /tmp/known_hosts ~/.ssh/known_hosts
+fi

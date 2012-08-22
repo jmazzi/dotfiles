@@ -1,0 +1,4 @@
+#!/bin/bash
+if [[ $1 != "" ]]; then
+  ps auxww | grep "$@" | grep -v grep | awk '{print $2}' | xargs -P 10 kill -9
+fi

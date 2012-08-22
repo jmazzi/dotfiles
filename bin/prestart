@@ -1,0 +1,6 @@
+#!/bin/bash
+if [[ -d "tmp" ]]; then
+  touch tmp/restart.txt
+else
+  echo "Please change to project root first"
+fi
