@@ -1,0 +1,38 @@
+#!/bin/bash
+
+#/ Usage: git travis
+#/
+#/ Open a browser on travis-ci.org/GITHUB_NAME/REPO_NAME
+#/
+#/ Ex:
+#/   git://github.com/rails/rails.git => http://travis-ci.org/rails/rails
+
+usage() {
+  grep '^#/' <"$0" | cut -c4-
+  exit 0
+}
+
+die() {
+  echo $1
+  exit 1
+}
+
+if [[ $# -gt 0 ]]; then
+  usage
+fi
+
+REMOTE_NAME=$(git remote 2> /dev/null)
+REMOTE_URL=$(git config remote.$REMOTE_NAME.url 2> /dev/null)
+REMOTE_URL=${REMOTE_URL/.git/}
+
+case $REMOTE_URL in
+  git@github.com*)     PATTERN="git@github.com:"     ;;
+  git://github.com*)   PATTERN="git://github.com/"   ;;
+  https://github.com*) PATTERN="https://github.com/" ;;
+  http://github.com*)  PATTERN="http://github.com/"  ;;
+  *)                   die "Not a github URL"        ;;
+esac
+
+TRAVIS_URL="http://travis-ci.org/${REMOTE_URL/$PATTERN/}"
+
+xdg-open $TRAVIS_URL

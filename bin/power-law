@@ -1,0 +1,4 @@
+#!/bin/bash
+grep-ruby -h '^\s*\(module\|class\)\b' | sed 's/^\s*//' | cut -d ' ' -f 2 | grep -i '^[a-z]' | while read class; do
+echo "`grep-ruby -l "\b$class\b" | wc -l ` $class"
+done | sort -n

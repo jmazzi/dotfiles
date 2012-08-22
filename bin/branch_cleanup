@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for i in `git branch| grep -v '^\*' | cut -d " " -f3`
+do
+  echo git branch -D $i
+done
