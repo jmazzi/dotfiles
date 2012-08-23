@@ -48,7 +48,7 @@ eval "$(rbenv init -)"
 export PATH=./bin:$PATH
 
 # LS sugar
-eval `dircolors ~/.dircolors 2>/dev/null`
+# eval `dircolors ~/.dircolors 2>/dev/null`
 
 # Complete $PWD/bin if it exists. Good for bundler with binstubs
 zstyle -e ':completion:*' command-path \
