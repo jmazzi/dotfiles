@@ -1,0 +1,3 @@
+#!/bin/bash
+current_branch=`git bare-branch`
+git push -u origin $current_branch
