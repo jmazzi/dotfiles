@@ -18,6 +18,9 @@
   wdiff = diff --color-words
   sexytime = !git push -u && git pull-request
   tree-graph = log --graph --simplify-by-decoration --pretty=format:'%d' --all
+  bare-branch = !git symbolic-ref HEAD | sed 's|refs/heads/||g'
+  ptrack = !git push -u origin $(git bare-branch)
+
 [color]
   branch = auto
   diff = auto
