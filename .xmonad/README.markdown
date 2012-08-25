@@ -23,9 +23,6 @@ This project is also recommended for advanced xmonad users, who may just not
 want to reinvent the wheel.  All source provided with this project is well
 documented and simple to customize.
 
-![Screenshot of xmonad-config](https://raw.github.com/jmazzi/dotfiles/master/.xmonad/screenshot.png)
-
-
 ## Requirements
 
 * xmonad 0.9.1 or 0.9.2
