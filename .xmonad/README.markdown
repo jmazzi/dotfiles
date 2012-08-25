@@ -23,10 +23,7 @@ This project is also recommended for advanced xmonad users, who may just not
 want to reinvent the wheel.  All source provided with this project is well
 documented and simple to customize.
 
-![Screenshot of xmonad-config](/jmazzi/xmonad-config/raw/master/screenshot.png)
-
-For source code, or to contribute, see the
-[xmonad-config project page](http://github.com/jmazzi/xmonad-config).
+![Screenshot of xmonad-config](/jmazzi/dotfiles/xmonad-config/raw/master/screenshot.png)
 
 
 ## Requirements
