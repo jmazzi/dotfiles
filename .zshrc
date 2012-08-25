@@ -66,6 +66,7 @@ alias rc='pry'
 alias b='bundle'
 
 # Wrap git in hub
+alias git='hub'
 alias gc='git commit'
 alias gs='git status'
 alias gp='git push'
