@@ -2,7 +2,36 @@
 set nocompatible
 set nonumber
 
-call pathogen#infect()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'itspriddle/vim-stripper'
+Bundle 'godlygeek/tabular'
+Bundle 'scrooloose/snipmate-snippets'
+Bundle 'git://gitorious.org/vim-gnupg/vim-gnupg'
+Bundle 'kien/ctrlp.vim'
+Bundle 'mileszs/ack.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'ervandew/supertab'
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-fugitive'
+Bundle 'msanders/snipmate.vim'
+Bundle 'tpope/vim-rails'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'skwp/vim-rspec'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-liquid'
+Bundle 'itspriddle/vim-jquery'
+Bundle 'itspriddle/vim-javascript-indent'
+Bundle 'tpope/vim-haml'
+Bundle 'mattn/gist-vim'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'itspriddle/vim-jekyll'
+Bundle 'vim-scripts/ZoomWin'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'groenewege/vim-less'
 
 syntax on
 
