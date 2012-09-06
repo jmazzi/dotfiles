@@ -9,7 +9,7 @@ export ZSH_THEME='arrow'
 export DISABLE_AUTO_UPDATE=true
 
 # COMPLETION_WAITING_DOTS="true"
-plugins=(github rails3 bundler gpg-agent ssh-agent)
+plugins=(git rails3 bundler gpg-agent ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -66,7 +66,7 @@ alias rc='pry'
 alias b='bundle'
 
 # Wrap git in hub
-alias git='hub'
+# alias git='hub'
 alias gc='git commit'
 alias gs='git status'
 alias gp='git push'
