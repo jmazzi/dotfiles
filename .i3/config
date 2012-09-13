@@ -19,6 +19,8 @@ bindsym $mod+Shift+Q kill
 # start dmenu (a program launcher)
 bindsym $mod+p exec dmenu_run
 
+bindsym $mod+Shift+O exec sudo pm-suspend
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
