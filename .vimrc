@@ -114,10 +114,6 @@ map <Leader>F :AckFromSearch<CR>
 " Show NERDTree
 map <Leader>d :NERDTreeToggle<CR>
 
-" Jump by 20 lines at a time
-no J 20j
-no K 20k
-
 " Reselect the last visual select
 nmap gV `[v`]
 
