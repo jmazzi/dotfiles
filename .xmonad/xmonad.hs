@@ -135,7 +135,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      spawn $ XMonad.terminal conf)
 
   -- Lock the screen using xscreensaver.
-  , ((modMask .|. controlMask, xK_l),
+  , ((modMask .|. shiftMask, xK_s),
      spawn "xscreensaver-command -lock")
 
   -- Launch dmenu via yeganesh.
@@ -156,15 +156,15 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Mute volume.
   , ((0, 0x1008FF12),
-     spawn "mute_toggle")
+     spawn "~/.xmonad/bin/mute_toggle")
 
   -- Decrease volume.
   , ((0, 0x1008FF11),
-     spawn "vol_down")
+     spawn "~/.xmonad/bin/vol_down")
 
   -- Increase volume.
   , ((0, 0x1008FF13),
-     spawn "vol_up")
+     spawn "~/.xmonad/bin/vol_up")
 
   -- Audio previous.
   , ((0, 0x1008FF16),
