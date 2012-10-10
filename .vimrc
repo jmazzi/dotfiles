@@ -182,8 +182,6 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_map = '<c-t>'
 
 
-autocmd BufNewFile,BufRead ~/.mutt/temp/mutt-* set filetype=mail
-
 " Function used to identify where to place the cursor, editing an email.
 function FirstInPost (...) range
   let cur = a:firstline
@@ -219,7 +217,20 @@ endfunction
 " Command to be called.
 com Fip :set tw=0<Bar>:%call FirstInPost()
 
+" Format mail
+function FT_mail()
+  :Fip
+  set textwidth=72
+  set spell
+  set spelllang=en_us
+  set textwidth=77
+  set expandtab
+  set noautoindent
+endfunction
+
 if has("autocmd")
+  autocmd FileType mail call FT_mail()
+
   autocmd GUIEnter * set visualbell t_vb=
   " Save folds
   " autocmd BufWinLeave * silent! mkview
