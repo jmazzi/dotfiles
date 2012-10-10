@@ -30,16 +30,13 @@ documented and simple to customize.
 * [xmobar 0.11.1 or 0.13](http://projects.haskell.org/xmobar/)
 * [trayer 1.0](http://fbpanel.sourceforge.net/)
 * [dmenu 4.0](http://tools.suckless.org/dmenu/)
-* [yeganesh 2.2](http://dmwit.com/yeganesh/)
 * [scrot 0.8](http://freshmeat.net/projects/scrot/)
-* [yeganesh 2.2](http://dmwit.com/yeganesh/)
 * [yaourt](https://wiki.archlinux.org/index.php/Yaourt) - This one is
-  optional. You can also use AUR to install yeganesh.
+  optional. 
 
 ### Installing requirements on [Arch Linux](http://www.archlinux.org/)
 
     sudo pacman -S xmonad xmonad-contrib xmobar trayer dmenu scrot
-    yaourt -S yeganesh
     
 
 ## Installation
