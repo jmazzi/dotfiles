@@ -154,7 +154,7 @@ bar {
         status_command i3status
         #status_command ~/.i3/status.sh
         position       top
-        tray_output    xinerama-0
+        tray_output primary
 }
 
 # Workspace Layout
