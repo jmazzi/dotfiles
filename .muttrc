@@ -24,11 +24,11 @@ set thorough_search      # strip headers and eval mimes before searching
 # Sidebar Patch --------------------------------------
 set sidebar_delim   = '  │'
 set sidebar_visible = yes
-set sidebar_width   = 24
+set sidebar_width   = 33
 color sidebar_new color221 color233
 
 # Theme
-source ~/.mutt/colors/mutt-colors-solarized-light-16.muttrc
+source ~/.mutt/colors/mutt-colors-louver.muttrc
 
 # Status Bar -----------------------------------------
 set status_chars  = " *%A"
@@ -48,10 +48,11 @@ set spoolfile = "+site5.com/INBOX"
 
 # Mailboxes to show in the sidebar.
 mailboxes +site5.com/INBOX \
-          +site5.com/archive \
+          +site5.com/Mgmt \
+          +site5.com/Eng.RailsJob \
           +site5.com/sent \
           +site5.com/drafts \
-          +site5.com/Eng.RailsJob \
+          +site5.com/archive \
           +temporary/search \
 
 
