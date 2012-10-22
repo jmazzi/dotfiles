@@ -1,12 +1,12 @@
-colorscheme badwolf
+" colorscheme badwolf
 " colorscheme Tomorrow-Night
 " colorscheme new-autumn
-" set gfn=Menlo:h10
+colorscheme base16-tomorrow
 
 if has("gui_macvim")
   macmenu &File.New\ Tab key=<nop>
   map <D-t> :CtrlP<CR>
-  set gfn=set guifont=Monospace\ 8
+  set gfn=set guifont=EspressoMono\ 8
 else
   set gfn=set guifont=EspressoMono\ 8
   " set gfn=set guifont=Monospace\ 8

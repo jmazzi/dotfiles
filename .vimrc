@@ -31,6 +31,7 @@ Bundle 'itspriddle/vim-jekyll'
 Bundle 'vim-scripts/ZoomWin'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'groenewege/vim-less'
+Bundle 'chriskempson/base16-vim'
 
 syntax on
 
