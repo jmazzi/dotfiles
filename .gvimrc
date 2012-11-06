@@ -6,9 +6,11 @@ colorscheme base16-tomorrow
 if has("gui_macvim")
   macmenu &File.New\ Tab key=<nop>
   map <D-t> :CtrlP<CR>
+  set guifont=Espresso\ Mono:h10
+else
+  set gfn=set guifont=EspressoMono\ 8
 end
 
-set gfn=set guifont=EspressoMono\ 8
 set lines=248 columns=248
 set colorcolumn=80
 
