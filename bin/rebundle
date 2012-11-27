@@ -1,0 +1,46 @@
+#!/usr/bin/env ruby
+#
+# Usage: rebundle gem_name
+#
+# The script will remove the gem dependency tree from the lockfile and bundle.
+
+LOCKFILE_NAME  = "Gemfile.lock"
+
+lockfile = File.readlines(LOCKFILE_NAME)
+
+# Finds where the gem dependency tree begins
+def beginning(gem_name, lockfile)
+  lockfile.each_with_index do |line, index|
+    if line.include?("specs:") && lockfile[index+1].include?(gem_name)
+      # traverse back until GIT
+      until (prev_line ||= "").include?("GIT")
+        prev_line = lockfile[index = index.pred]
+      end
+
+      return index
+    end
+  end
+
+  false
+end
+
+# Finds where the gem dependency tree ends
+def ending(beginning, lockfile)
+  lockfile.drop(beginning).each_with_index do |line, index|
+    return index if line == "\n"
+  end
+
+  false
+end
+
+if b = beginning(ARGV[0], lockfile)
+  e = ending(b, lockfile) + b
+
+  lockfile.slice!(b..e)
+
+  # Writes the lockfile without the gem dependency tree
+  File.write(LOCKFILE_NAME, lockfile.join)
+end
+
+# Ready to bundle
+IO.popen('bundle') { |f| puts f.read }
