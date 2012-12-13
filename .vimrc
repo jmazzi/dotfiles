@@ -182,6 +182,12 @@ let g:tagbar_autofocus = 1
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_map = '<c-t>'
 
+" Squash commits
+function SquashCommits()
+  '<,'>s/pick /squash /ge
+endfunction
+
+autocmd VimEnter .git/rebase-merge/git-rebase-todo vmap <buffer> <leader>s :call SquashCommits()<CR>
 
 " Function used to identify where to place the cursor, editing an email.
 function FirstInPost (...) range
