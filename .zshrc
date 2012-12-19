@@ -28,7 +28,7 @@ bindkey '^j'   history-beginning-search-forward-end
 
 # Exports
 export EDITOR='vim'
-export PATH=/Applications/Postgres.app/Contents/MacOS/bin:~/local/bin:~/bin:/usr/local/bin:/opt/android-sdk/platform-tools:~/.rbenv/bin:$PATH:~/.cabal/bin:~/.xmonad/bin:/opt/nodejs/bin
+export PATH=/Applications/Postgres.app/Contents/MacOS/bin:~/local/bin:~/bin:/usr/local/bin:/usr/local/sbin:/opt/android-sdk/platform-tools:~/.rbenv/bin:$PATH:~/.cabal/bin:~/.xmonad/bin:/opt/nodejs/bin
 export JRUBY_OPTS=--1.9
 export RBXOPT="-X19"
 export TERM=xterm-256color
