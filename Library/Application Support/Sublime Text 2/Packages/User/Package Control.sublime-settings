@@ -1,4 +1,5 @@
 {
+	"auto_upgrade_last_run": null,
 	"installed_packages":
 	[
 		"Alignment",
@@ -7,6 +8,8 @@
 		"ERB Snippets",
 		"Gist",
 		"Git",
-		"Markdown Preview"
+		"Markdown Preview",
+		"Package Control",
+		"RSpec"
 	]
 }
