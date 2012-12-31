@@ -11,7 +11,8 @@ else
   set gfn=set guifont=EspressoMono\ 8
 end
 
-set lines=248 columns=248
+" set lines=248 columns=248
+set lines=999 columns=999
 set colorcolumn=80
 
 " Hide toolbar and scrollbars
