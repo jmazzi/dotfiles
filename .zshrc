@@ -9,7 +9,7 @@ export ZSH_THEME='arrow'
 export DISABLE_AUTO_UPDATE=true
 
 # COMPLETION_WAITING_DOTS="true"
-plugins=(git rails3 gpg-agent ssh-agent)
+plugins=(git rails3 ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
