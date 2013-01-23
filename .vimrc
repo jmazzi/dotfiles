@@ -9,7 +9,7 @@ Bundle 'itspriddle/vim-stripper'
 Bundle 'godlygeek/tabular'
 Bundle 'scrooloose/snipmate-snippets'
 Bundle 'git://gitorious.org/vim-gnupg/vim-gnupg'
-Bundle 'kien/ctrlp.vim'
+Bundle 'wincent/Command-T'
 Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'ervandew/supertab'
@@ -178,10 +178,6 @@ map <leader><leader> :ZoomWin<cr>
 
 " Focus the window when it's launched
 let g:tagbar_autofocus = 1
-
-" Already handled
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_map = '<c-t>'
 
 " Squash commits
 function SquashCommits()

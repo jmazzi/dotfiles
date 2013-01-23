@@ -5,7 +5,7 @@ colorscheme base16-tomorrow
 
 if has("gui_macvim")
   macmenu &File.New\ Tab key=<nop>
-  map <D-t> :CtrlP<CR>
+  map <D-t> :CommandT<CR>
   set guifont=Espresso\ Mono:h10
 else
   set gfn=set guifont=EspressoMono\ 8
