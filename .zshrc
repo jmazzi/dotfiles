@@ -44,8 +44,8 @@ cdpath=($HOME/work/Site5 $HOME/work)
 
 # rbenv
 eval "$(rbenv init -)"
-export PATH=./bin:$PATH
-
+# rbenv overwrites path
+export PATH=./bundle_bin:./bin:$PATH
 # LS sugar
 # eval `dircolors ~/.dircolors 2>/dev/null`
 
