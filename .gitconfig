@@ -35,6 +35,8 @@
   default = tracking
 [core]
   excludesfile = ~/.gitignore_global
+[rebase]
+  autosquash = true
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
   path =
