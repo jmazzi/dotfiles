@@ -25,6 +25,7 @@ Bundle 'itspriddle/vim-jquery'
 Bundle 'itspriddle/vim-javascript-indent'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-sensible'
+Bundle 'tpope/vim-git'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'majutsushi/tagbar'
@@ -181,7 +182,7 @@ let g:tagbar_autofocus = 1
 
 " Squash commits
 function SquashCommits()
-  '<,'>s/pick /squash /ge
+  '<,'>s/pick /fixup /ge
 endfunction
 
 autocmd VimEnter .git/rebase-merge/git-rebase-todo vmap <buffer> <leader>s :call SquashCommits()<CR>
@@ -254,6 +255,19 @@ if has("autocmd")
 
   augroup ft_coffee
     autocmd!
+
+
+    " Place the cursor at the top of the buffer
+    autocmd VimEnter .git/COMMIT_EDITMSG exe 'normal! gg'
+
+    " Rebase shortcuts, press P, R, E, S, F to change the current line to the
+    " given command. Press C to cycle through available commands.
+    autocmd VimEnter .git/rebase-merge/git-rebase-todo nnoremap <buffer> <silent> P :Pick<cr>
+    autocmd VimEnter .git/rebase-merge/git-rebase-todo nnoremap <buffer> <silent> R :Reword<cr>
+    autocmd VimEnter .git/rebase-merge/git-rebase-todo nnoremap <buffer> <silent> E :Edit<cr>
+    autocmd VimEnter .git/rebase-merge/git-rebase-todo nnoremap <buffer> <silent> S :Squash<cr>
+    autocmd VimEnter .git/rebase-merge/git-rebase-todo nnoremap <buffer> <silent> F :Fixup<cr>
+    autocmd VimEnter .git/rebase-merge/git-rebase-todo nnoremap <buffer> <silent> C :Cycle<cr>
 
     " Compile the current buffer in a vertical split
     autocmd FileType coffee nnoremap <buffer> <leader>cc :CoffeeCompile vert<cr>

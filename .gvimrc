@@ -1,6 +1,3 @@
-" colorscheme badwolf
-" colorscheme Tomorrow-Night
-" colorscheme new-autumn
 colorscheme base16-tomorrow
 
 if has("gui_macvim")
@@ -22,5 +19,4 @@ set guioptions-=R
 set guioptions-=l
 set guioptions-=L
 set guioptions-=m
-
 set background=dark
