@@ -34,6 +34,7 @@ Bundle 'vim-scripts/ZoomWin'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'groenewege/vim-less'
 Bundle 'chriskempson/base16-vim'
+Bundle 'rcyrus/snipmate-snippets-rubymotion'
 
 syntax on
 
