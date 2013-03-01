@@ -112,6 +112,7 @@ map <leader>s :AS<cr>
 map <leader>v :AV<cr>
 
 " Searching
+let g:ackprg = 'ag --nogroup --nocolor --column'
 map <Leader>f :Ack<space>
 map <Leader>F :AckFromSearch<CR>
 
