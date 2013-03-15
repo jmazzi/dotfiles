@@ -3,6 +3,7 @@
 	"installed_packages":
 	[
 		"Alignment",
+		"All Autocomplete",
 		"CoffeeScript",
 		"Emmet",
 		"ERB Snippets",
@@ -10,6 +11,7 @@
 		"Git",
 		"Markdown Preview",
 		"Package Control",
+		"Related Files",
 		"RSpec"
 	]
 }
