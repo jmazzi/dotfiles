@@ -183,7 +183,7 @@ map <leader><leader> :ZoomWin<cr>
 let g:tagbar_autofocus = 1
 
 " Already handled
-let g:ctrlp_working_path_mode = 0
+" let g:ctrlp_working_path_mode = 0
 let g:ctrlp_map = '<c-t>'
 
 " Squash commits
