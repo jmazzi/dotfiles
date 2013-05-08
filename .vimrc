@@ -15,7 +15,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
-Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-rails'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'skwp/vim-rspec'
@@ -34,7 +33,11 @@ Bundle 'vim-scripts/ZoomWin'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'groenewege/vim-less'
 Bundle 'chriskempson/base16-vim'
-Bundle 'rcyrus/snipmate-snippets-rubymotion'
+Bundle 'tpope/vim-dispatch'
+Bundle 'tpope/vim-speeddating'
+Bundle 'tpope/vim-rbenv'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-bundler'
 
 syntax on
 
@@ -321,19 +324,15 @@ if has("autocmd")
 end
 
 
-" Snippets
-let g:snippets_dir = '~/.vim/bundle/snipmate-snippets/'
-source ~/.vim/bundle/snipmate-snippets/support_functions.vim
-
 " Gist clipboard
-let g:gist_clip_command = 'xclip -selection clipboard'
+let g:gist_clip_command = 'pbcopy'
 
 " Show my private gists
 let g:gist_show_privates = 1
 
 " Open in a browser
 let g:gist_open_browser_after_post = 0
-let g:gist_browser_command = 'google-chrome %URL% &'
+let g:gist_browser_command = 'open %URL% &'
 
 " Don't complete before nothing, after space, comma or ]
 let g:SuperTabNoCompleteBefore=[]
