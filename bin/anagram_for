@@ -1,0 +1,57 @@
+#!/usr/bin/env ruby
+
+require 'open-uri'
+require 'cgi'
+
+class Anagram
+  def initialize(phrase)
+    @phrase   = phrase
+    @response = fetch
+  end
+
+  def results(random)
+    if random
+      response.uniq.sort.sample
+    else
+      response.uniq.sort.join("\n")
+    end
+  end
+
+  private
+
+  def response
+    [].tap do |lines|
+      @response.split("\n").each do |line|
+        lines << line.sub("<br>", "") if word_result?(line)
+      end
+    end
+  end
+
+  def word_result?(string)
+    string.match(/#{regex}/) && string.match(/^[a-z]/i)
+  end
+
+  def regex
+    @regex ||= "(#{@phrase.scan(/./).join("|")})+" + "#{Regexp.escape('<br>')}"
+  end
+
+  def fetch
+    open(url).read
+  end
+
+  def url
+    "http://www.wordsmith.org/anagram/anagram.cgi?anagram=#{CGI.escape(@phrase)}&t=1000&a=n"
+  end
+end
+
+
+if ARGV.any?
+  random   = ARGV[0] == '-r' ? ARGV.shift : false
+  anagrams = Anagram.new(ARGV.join(" "))
+
+  puts anagrams.results(random)
+else
+  puts "Usage: #{File.basename($0)} phrase here"
+  puts "    -r Random phrase"
+  puts
+end
