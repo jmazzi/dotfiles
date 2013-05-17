@@ -11,7 +11,7 @@ class Anagram
 
   def results(random)
     if random
-      response.uniq.sort.sample
+      response.uniq.sample
     else
       response.uniq.sort.join("\n")
     end
