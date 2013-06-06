@@ -34,6 +34,7 @@ Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-speeddating'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/ZoomWin'
+Bundle 'itspriddle/vim-marked'
 
 syntax on
 
