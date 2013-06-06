@@ -1,0 +1,11 @@
+#!/bin/bash
+# Open the current project in a web browser
+
+project=$(basename $(pwd))
+
+if [ -h ~/.pow/${project} ]; then
+  open "http://${project}.dev/"
+else
+  echo "This project hasn't been added to pow yet"
+  exit 1
+fi
