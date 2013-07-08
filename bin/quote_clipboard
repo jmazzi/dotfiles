@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+require 'open3'
+
+clipboard = `pbpaste`
+clipboard.gsub! /^/, '>'
+
+Open3.popen2("pbcopy") do |stdin, stdout, wait_thr|
+  stdin.print clipboard
+  stdin.close
+end
