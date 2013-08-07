@@ -7,6 +7,7 @@ fi
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME='arrow'
 export DISABLE_AUTO_UPDATE=true
+export GOPATH=~/work/jmazzi/go
 
 # COMPLETION_WAITING_DOTS="true"
 plugins=(git rails3 ssh-agent)
@@ -28,7 +29,7 @@ bindkey '^j'   history-beginning-search-forward-end
 
 # Exports
 export EDITOR='vim'
-export PATH=/Applications/Postgres.app/Contents/MacOS/bin:~/local/bin:/usr/local/share/npm/bin:~/bin:/usr/local/bin:/usr/local/sbin:/opt/android-sdk/platform-tools:~/.rbenv/bin:$PATH:~/.cabal/bin:~/.xmonad/bin:/opt/nodejs/bin
+export PATH=/Applications/Postgres.app/Contents/MacOS/bin:~/local/bin:/usr/local/share/npm/bin:~/bin:/usr/local/bin:/usr/local/sbin:/opt/android-sdk/platform-tools:~/.rbenv/bin:$PATH:~/.cabal/bin:~/.xmonad/bin:/opt/nodejs/bin:$GOPATH/bin
 export JRUBY_OPTS=--1.9
 export RBXOPT="-X19"
 export TERM=xterm-256color
@@ -45,7 +46,7 @@ cdpath=($HOME/work/Site5 $HOME/work)
 # rbenv
 eval "$(rbenv init -)"
 # rbenv overwrites path
-export PATH=./bundle_bin:./bin:$PATH
+export PATH=./bundle_bin:./bin:~/work/deploy_tools:$PATH
 # LS sugar
 # eval `dircolors ~/.dircolors 2>/dev/null`
 
