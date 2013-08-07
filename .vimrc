@@ -35,6 +35,7 @@ Bundle 'tpope/vim-speeddating'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/ZoomWin'
 Bundle 'itspriddle/vim-marked'
+Bundle 'jnwhiteh/vim-golang'
 
 syntax on
 
