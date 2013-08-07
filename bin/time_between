@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+
+require 'date'
+
+def format_date(date)
+  if date.match('/')
+    month, day, year  = date.split('/')
+    "#{year}-#{month}-#{day}"
+  else
+    date
+  end
+end
+
+if ARGV.size == 3
+  unit       = ARGV[0]
+  start_date = Date.parse(format_date(ARGV[1]))
+  end_date   = Date.parse(format_date(ARGV[2]))
+
+  result = if unit == 'days'
+    end_date - start_date
+  elsif unit == 'months'
+    (end_date.year * 12 + end_date.month) - (start_date.year * 12 + start_date.month)
+  else
+    puts "WTF even is a #{unit}"
+    exit -1
+  end
+
+  puts "There are #{result.to_i} #{unit} between #{start_date} - #{end_date}"
+else
+  puts "days/months start_date end_date"
+end
