@@ -1,5 +1,10 @@
 #!/usr/bin/env ruby
 
+if ARGV[0].nil? || ARGV[0].empty?
+  puts "shorturl http://somesite.com"
+  exit 1
+end
+
 require 'net/https'
 require 'json'
 require 'uri'
