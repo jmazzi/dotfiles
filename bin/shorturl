@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+require 'net/https'
+require 'json'
+require 'uri'
+require 'open3'
+require 'shellwords'
+
+uri  = URI.parse("https://www.googleapis.com/urlshortener/v1/url")
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+
+request = Net::HTTP::Post.new(uri.path)
+request.body = { "longUrl" => ARGV[0] }.to_json
+request["Content-Type"] = "application/json"
+
+response = http.request(request)
+payload  = JSON.parse(response.body)
+url      = Shellwords.escape(payload['id'])
+
+Open3.popen2("pbcopy") do |stdin, stdout, wait_thr|
+  stdin.print url
+end
