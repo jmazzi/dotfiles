@@ -1,2 +1,2 @@
 #!/bin/bash
-curl ifconfig.me
+curl http://icanhazip.com/
