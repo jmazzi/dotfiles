@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if [ "$1" != "" ]; then
+  pattern="2^(32-$1)"
+  echo $pattern | bc
+fi
