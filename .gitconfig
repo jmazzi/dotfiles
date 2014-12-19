@@ -16,7 +16,7 @@
     -e \"print('http://' + url) if url != ''\" \
     ) && [[ -n $url ]] && open $url || echo \"Can't find origin.\" && exit 1
   wdiff = diff --color-words
-  create-pr = !git ptrack && hub pull-request
+  create-pr = !git ptrack && gh pull-request
   tree-graph = log --graph --simplify-by-decoration --pretty=format:'%d' --all
   bare-branch = !git symbolic-ref HEAD | sed 's|refs/heads/||g'
   ptrack = !git push -u origin $(git bare-branch)
