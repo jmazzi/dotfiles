@@ -1,15 +1,17 @@
-colorscheme base16-tomorrow
+"colorscheme base16-tomorrow
+" colorscheme Tomorrow-Night
+colorscheme solarized
+set background=dark
+
+set guifont=Espresso\ Mono:h10
+map <D-t> :CtrlP<CR>
 
 if has("gui_macvim")
   macmenu &File.New\ Tab key=<nop>
-  map <D-t> :CtrlP<CR>
-  set guifont=Espresso\ Mono:h10
-else
-  set gfn=set guifont=EspressoMono\ 8
 end
 
 " set lines=248 columns=248
-set lines=999 columns=999
+"set lines=999 columns=999
 set colorcolumn=80
 
 " Hide toolbar and scrollbars
@@ -19,4 +21,3 @@ set guioptions-=R
 set guioptions-=l
 set guioptions-=L
 set guioptions-=m
-set background=dark

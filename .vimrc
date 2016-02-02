@@ -2,40 +2,50 @@
 set nocompatible
 set nonumber
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" set rtp+=~/.vim/bundle/vundle/
+" call vundle#rc()
 
-Bundle 'chriskempson/base16-vim'
-Bundle 'ervandew/supertab'
-Bundle 'git://gitorious.org/vim-gnupg/vim-gnupg'
-Bundle 'godlygeek/tabular'
-Bundle 'groenewege/vim-less'
-Bundle 'itspriddle/vim-javascript-indent'
-Bundle 'itspriddle/vim-jekyll'
-Bundle 'itspriddle/vim-jquery'
-Bundle 'itspriddle/vim-stripper'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'kien/ctrlp.vim'
-Bundle 'majutsushi/tagbar'
-Bundle 'mileszs/ack.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'skwp/vim-rspec'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'tpope/vim-dispatch'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-git'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-liquid'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-rbenv'
-Bundle 'tpope/vim-sensible'
-Bundle 'tpope/vim-speeddating'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'vim-scripts/ZoomWin'
-Bundle 'itspriddle/vim-marked'
-Bundle 'jnwhiteh/vim-golang'
+"Bundle 'chriskempson/base16-vim'
+"Bundle 'ervandew/supertab'
+"Bundle 'godlygeek/tabular'
+"Bundle 'groenewege/vim-less'
+"Bundle 'itspriddle/vim-javascript-indent'
+"Bundle 'itspriddle/vim-jekyll'
+"Bundle 'itspriddle/vim-jquery'
+"Bundle 'itspriddle/vim-stripper'
+"Bundle 'kchmck/vim-coffee-script'
+"Bundle 'kien/ctrlp.vim'
+"Bundle 'majutsushi/tagbar'
+"Bundle 'mileszs/ack.vim'
+"Bundle 'scrooloose/nerdtree'
+"Bundle 'thoughtbot/vim-rspec'
+"Bundle 'tomtom/tcomment_vim'
+"Bundle 'tpope/vim-dispatch'
+"Bundle 'tpope/vim-endwise'
+"Bundle 'tpope/vim-fugitive'
+"Bundle 'tpope/vim-git'
+"Bundle 'tpope/vim-haml'
+"Bundle 'tpope/vim-liquid'
+"Bundle 'tpope/vim-markdown'
+"Bundle 'tpope/vim-rails'
+"Bundle 'tpope/vim-rbenv'
+"Bundle 'tpope/vim-sensible'
+"Bundle 'tpope/vim-speeddating'
+"Bundle 'tpope/vim-eunuch'
+"Bundle 'vim-ruby/vim-ruby'
+"Bundle 'vim-scripts/ZoomWin'
+"Bundle 'itspriddle/vim-marked'
+"Bundle 'jnwhiteh/vim-golang'
+"Bundle 'tpope/vim-unimpaired'
+"Bundle 'tpope/vim-jdaddy'
+"Bundle 'sickill/vim-monokai'
+"Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+"Bundle 'rizzatti/funcoo.vim'
+"Bundle 'rizzatti/dash.vim'
+"Bundle 'ekalinin/Dockerfile.vim'
+"Bundle 'itchyny/lightline.vim'
+"Bundle 'lambdalisue/vim-manpager'
+execute pathogen#infect()
 
 syntax on
 
@@ -335,3 +345,10 @@ let g:gist_browser_command = 'open %URL% &'
 " Don't complete before nothing, after space, comma or ]
 let g:SuperTabNoCompleteBefore=[]
 let g:SuperTabNoCompleteAfter=[',','\s', ']']
+
+let g:rspec_command = "Dispatch rspec {spec}"
+
+let g:lightline = {
+      \ 'colorscheme': 'solarized_dark',
+      \ }
+
